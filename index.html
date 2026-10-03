@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tales Eléctrica - Ingeniería Eléctrica de Alta Precisión e Infraestructura</title>
+  <meta name="description" content="Ingeniería eléctrica residencial, industrial, media y alta tensión, electromovilidad y energías renovables bajo norma NOM-001-SEDE en CDMX, Edomex e Hidalgo.">
+  
+  <!-- Google Fonts: Montserrat, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-50..200&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tech-ink": "#111116",
+            primary: "#2F0052",
+            "primary-container": "#4A0E78",
+            "on-primary": "#FFFFFF",
+            secondary: "#841CD8",
+            "secondary-accent": "#8E2DE2",
+            background: "#FBF8FF",
+            "on-background": "#1B1B20",
+            surface: "#FFFFFF",
+            "surface-subtle": "#F6F2FA",
+            "surface-container": "#F0ECF4",
+            "surface-container-high": "#EAE7EE",
+            "surface-variant": "#E4E1E9",
+            "outline-dim": "#CEC3D2",
+            "outline-tech": "#111116",
+          },
+          fontFamily: {
+            headline: ["Montserrat", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            mono: ["'JetBrains Mono'", "monospace"],
+          },
+          boxShadow: {
+            'brutal': '4px 4px 0px #111116',
+            'brutal-sm': '2px 2px 0px #111116',
+            'brutal-lg': '6px 6px 0px #111116',
+            'brutal-purple': '4px 4px 0px #841CD8',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Resonant Stark Design System & Robust Native Utilities */
+    :root {
+      --tech-ink: #111116;
+      --brand-primary: #2F0052;
+      --brand-secondary: #841CD8;
+      --brand-accent: #8E2DE2;
+      --canvas-bg: #FBF8FF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--tech-ink);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Machine-milled Brutalist Cards with 4px Hard Shadow */
+    .brutal-card {
+      background-color: #FFFFFF;
+      border: 2px solid var(--tech-ink);
+      box-shadow: 4px 4px 0px var(--tech-ink);
+      border-radius: 4px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .brutal-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--tech-ink);
+    }
+
+    /* Mechanical Press Button Effect */
+    .brutal-btn-primary {
+      background-color: var(--brand-primary);
+      color: #FFFFFF;
+      border: 2px solid var(--tech-ink);
+      box-shadow: 4px 4px 0px var(--tech-ink);
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .brutal-btn-primary:hover {
+      background-color: #4A0E78;
+      color: #FFFFFF;
+    }
+
+    .brutal-btn-primary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--tech-ink);
+    }
+
+    .brutal-btn-secondary {
+      background-color: #F0ECF4;
+      color: var(--brand-primary);
+      border: 2px solid var(--tech-ink);
+      box-shadow: 4px 4px 0px var(--tech-ink);
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .brutal-btn-secondary:hover {
+      background-color: #E4E1E9;
+    }
+
+    .brutal-btn-secondary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--tech-ink);
+    }
+
+    /* Chamfered Technical Badges */
+    .chamfer-badge {
+      clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);
+    }
+
+    /* Greek Frame Styling with Controlled Margins */
+    .greek-frame-refined {
+      border: 3px double var(--brand-primary);
+      background-color: #FFFFFF;
+      position: relative;
+      box-shadow: 4px 4px 0px var(--tech-ink);
+      border-radius: 4px;
+    }
+
+    .greek-frame-refined::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      border: 1px dashed var(--brand-secondary);
+      pointer-events: none;
+      border-radius: 2px;
+    }
+
+    /* Safe Technical Fluting that doesn't cause overflow */
+    .tech-border-safe {
+      border: 2px solid var(--tech-ink);
+      box-shadow: 4px 4px 0px var(--tech-ink);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    /* Pulse animation for live circuit node */
+    @keyframes circuitPulse {
+      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(132, 28, 216, 0.7); }
+      50% { transform: scale(1.15); opacity: 0.85; box-shadow: 0 0 0 8px rgba(132, 28, 216, 0); }
+    }
+
+    .live-circuit-indicator {
+      animation: circuitPulse 2s infinite ease-in-out;
+    }
+
+    /* Prevent awkward word breaks */
+    .no-hyphens {
+      hyphens: none;
+      -webkit-hyphens: none;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    /* Subtle Technical Grid Background */
+    .tech-grid-bg {
+      background-image: linear-gradient(to right, rgba(74, 14, 120, 0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(74, 14, 120, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Safe entrance animation that always defaults visible */
+    @keyframes techSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tech-anim {
+      animation: techSlideUp 0.5s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-secondary selection:text-white">
+
+  <!-- ================================================================= -->
+  <!-- 1. TOP NAVBAR (Sticky, Fully Responsive with Mobile Drawer)       -->
+  <!-- ================================================================= -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-tech-ink w-full px-4 sm:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Tales Eléctrica Inicio">
+        <img src="img/logo-tales.svg" alt="Tales Eléctrica Logotipo" class="w-10 h-10 border-2 border-tech-ink rounded shadow-brutal-sm group-hover:rotate-6 transition-transform">
+        <div class="flex flex-col">
+          <span class="font-headline font-black text-xl sm:text-2xl text-primary tracking-tight uppercase leading-none">
+            Tales Eléctrica
+          </span>
+          <span class="font-mono text-[10px] text-secondary font-bold tracking-widest uppercase">
+            Ingeniería & Electromovilidad
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#servicios" class="font-mono text-sm font-bold uppercase text-on-background hover:text-secondary tracking-wider transition-colors">
+          // Servicios
+        </a>
+        <a href="#cumplimiento" class="font-mono text-sm font-bold uppercase text-on-background hover:text-secondary tracking-wider transition-colors">
+          // Normativas
+        </a>
+        <a href="#portafolio" class="font-mono text-sm font-bold uppercase text-on-background hover:text-secondary tracking-wider transition-colors">
+          // Casos de Estudio
+        </a>
+        <a href="#equipo" class="font-mono text-sm font-bold uppercase text-on-background hover:text-secondary tracking-wider transition-colors">
+          // Equipo
+        </a>
+      </nav>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#cotizar" class="brutal-btn-primary px-4 sm:px-5 py-2.5 text-xs sm:text-sm">
+          <span>[ COTIZAR ]</span>
+          <span class="material-symbols-outlined text-sm sm:text-base text-yellow-300">electric_bolt</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2.5 border-2 border-tech-ink bg-surface-container rounded shadow-brutal-sm hover:bg-surface-container-high transition-colors focus:outline-none" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span id="menuIconOpen" class="material-symbols-outlined block text-tech-ink">menu</span>
+          <span id="menuIconClose" class="material-symbols-outlined hidden text-tech-ink">close</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden lg:hidden border-t-2 border-tech-ink mt-3 pt-4 pb-2 bg-surface-subtle transition-all duration-200">
+      <div class="flex flex-col gap-3 px-2">
+        <a href="#servicios" class="mobile-nav-link font-mono text-sm font-bold uppercase text-primary px-4 py-3 border-2 border-tech-ink bg-white rounded shadow-brutal-sm flex items-center justify-between">
+          <span>01. Servicios Especializados</span>
+          <span class="material-symbols-outlined text-secondary">arrow_forward</span>
+        </a>
+        <a href="#cumplimiento" class="mobile-nav-link font-mono text-sm font-bold uppercase text-primary px-4 py-3 border-2 border-tech-ink bg-white rounded shadow-brutal-sm flex items-center justify-between">
+          <span>02. Normativas y Certificaciones</span>
+          <span class="material-symbols-outlined text-secondary">arrow_forward</span>
+        </a>
+        <a href="#portafolio" class="mobile-nav-link font-mono text-sm font-bold uppercase text-primary px-4 py-3 border-2 border-tech-ink bg-white rounded shadow-brutal-sm flex items-center justify-between">
+          <span>03. Casos de Estudio Reales</span>
+          <span class="material-symbols-outlined text-secondary">arrow_forward</span>
+        </a>
+        <a href="#equipo" class="mobile-nav-link font-mono text-sm font-bold uppercase text-primary px-4 py-3 border-2 border-tech-ink bg-white rounded shadow-brutal-sm flex items-center justify-between">
+          <span>04. Equipo & Aliados</span>
+          <span class="material-symbols-outlined text-secondary">arrow_forward</span>
+        </a>
+        <a href="https://wa.me/525512345678?text=Hola%20Tales%20Eléctrica,%20me%20gustaría%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="font-mono text-sm font-bold uppercase text-white bg-green-700 hover:bg-green-800 px-4 py-3 border-2 border-tech-ink rounded shadow-brutal-sm flex items-center justify-center gap-2 mt-1">
+          <span class="material-symbols-outlined">chat</span>
+          <span>WhatsApp Directo Ingeniería</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- 2. HERO SECTION (Fully Visible, High-Impact, Zero FOUC)          -->
+  <!-- ================================================================= -->
+  <section class="relative border-b-2 border-tech-ink tech-grid-bg py-10 sm:py-16 px-4 sm:px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- Left Column: Copy & Value Proposition -->
+      <div class="lg:col-span-7 flex flex-col gap-6 z-10">
+        
+        <!-- Philosophical Quote Badge (Tales de Mileto) -->
+        <div class="greek-frame-refined p-4 sm:p-5 relative">
+          <p class="font-headline font-bold text-xs sm:text-sm md:text-base text-primary uppercase leading-snug tracking-wide">
+            "La esperanza es el único bien común a todos los hombres; los que lo han perdido todo, aún la poseen."
+          </p>
+          <div class="flex items-center justify-between mt-2 pt-2 border-t border-secondary/30">
+            <span class="font-mono text-[11px] font-bold text-secondary uppercase">// TALES DE MILETO — 624 A.C.</span>
+            <span class="font-mono text-[10px] bg-primary text-white px-2 py-0.5 rounded font-bold">SCHEMATIC ID: 01-ALPHA</span>
+          </div>
+        </div>
+
+        <!-- Main Headline -->
+        <div>
+          <div class="inline-flex items-center gap-2 bg-surface-container border-2 border-tech-ink px-3 py-1 rounded shadow-brutal-sm mb-4">
+            <span class="w-2.5 h-2.5 rounded-full bg-secondary live-circuit-indicator"></span>
+            <span class="font-mono text-xs font-bold text-primary uppercase tracking-wider">NORMATIVA NOM-001-SEDE & CÓDIGO DE RED</span>
+          </div>
+          <h1 class="font-headline font-black text-3xl sm:text-5xl md:text-6xl text-primary uppercase tracking-tight leading-[1.05]">
+            Ingeniería Eléctrica <span class="text-secondary underline decoration-4 decoration-primary">Avanzada.</span>
+          </h1>
+        </div>
+
+        <!-- Descriptive Subhead -->
+        <p class="font-body text-base sm:text-lg md:text-xl text-on-background/80 max-w-2xl leading-relaxed">
+          Infraestructura de potencia residencial e industrial, subestaciones y estaciones de electromovilidad con estándares estrictos de precisión, cálculo y certificación en CDMX, Estado de México e Hidalgo.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#cotizar" class="brutal-btn-primary px-6 sm:px-8 py-3.5 text-sm sm:text-base">
+            <span>[ COTIZAR PROYECTO ]</span>
+            <span class="material-symbols-outlined text-yellow-300">electric_bolt</span>
+          </a>
+          <a href="https://wa.me/525512345678?text=Hola%20Tales%20Eléctrica,%20solicito%20asesoría%20técnica%20inmediata" target="_blank" rel="noopener" class="brutal-btn-secondary px-6 sm:px-8 py-3.5 text-sm sm:text-base">
+            <span class="material-symbols-outlined text-green-700">forum</span>
+            <span>[ WHATSAPP INMEDIATO ]</span>
+          </a>
+        </div>
+
+        <!-- Live Metrics Bar -->
+        <div class="grid grid-cols-3 gap-3 pt-4 max-w-lg">
+          <div class="p-3 bg-white border-2 border-tech-ink rounded shadow-brutal-sm">
+            <span class="block font-mono text-xl sm:text-2xl font-black text-primary">100%</span>
+            <span class="font-mono text-[10px] sm:text-xs text-secondary font-bold uppercase">Cumplimiento UVIE</span>
+          </div>
+          <div class="p-3 bg-white border-2 border-tech-ink rounded shadow-brutal-sm">
+            <span class="block font-mono text-xl sm:text-2xl font-black text-primary">24/7</span>
+            <span class="font-mono text-[10px] sm:text-xs text-secondary font-bold uppercase">Respuesta Crítica</span>
+          </div>
+          <div class="p-3 bg-white border-2 border-tech-ink rounded shadow-brutal-sm">
+            <span class="block font-mono text-xl sm:text-2xl font-black text-primary">0%</span>
+            <span class="font-mono text-[10px] sm:text-xs text-secondary font-bold uppercase">Riesgo Eléctrico</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Industrial Hero Image Container -->
+      <div class="lg:col-span-5 relative">
+        <div class="tech-border-safe bg-surface-container overflow-hidden relative group">
+          
+          <!-- Image with technical overlay -->
+          <div class="relative w-full h-[340px] sm:h-[450px] md:h-[500px] overflow-hidden bg-tech-ink">
+            <img src="img/hero-substation.jpg" alt="Subestación Eléctrica Industrial Tales Eléctrica" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-tech-ink/80 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+
+          <!-- Bottom Technical Spec Overlay -->
+          <div class="absolute bottom-0 inset-x-0 p-4 bg-tech-ink/90 backdrop-blur-sm border-t-2 border-secondary text-white flex flex-col gap-1">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs text-yellow-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 live-circuit-indicator"></span>
+                SUBESTACIÓN 230kV / 23kV
+              </span>
+              <span class="font-mono text-[11px] text-gray-300 font-bold">GRID-NODE: CDMX-NORTH</span>
+            </div>
+            <p class="font-mono text-[10px] text-gray-300">
+              Transformadores de potencia, celdas de corte en SF6 y enlace de telemetría en tiempo real.
+            </p>
+          </div>
+
+          <!-- Top-right Diagnostic Badge -->
+          <div class="absolute top-3 right-3 bg-white/95 border-2 border-tech-ink px-3 py-1 rounded shadow-brutal-sm font-mono text-xs font-bold text-primary flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-secondary text-sm">verified</span>
+            <span>NOM VALIDATED</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 3. FEATURE VALUE PROPOSITIONS (3 Machine-milled cards)            -->
+  <!-- ================================================================= -->
+  <section class="py-12 px-4 sm:px-8 border-b-2 border-tech-ink bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      
+      <!-- Feature 1 -->
+      <div class="brutal-card p-6 sm:p-8 flex flex-col justify-between relative">
+        <div>
+          <div class="flex items-center justify-between pb-4 mb-4 border-b-2 border-secondary/40">
+            <h3 class="font-headline font-black text-xl text-primary uppercase">Ciclo Completo</h3>
+            <span class="material-symbols-outlined text-secondary text-2xl">account_tree</span>
+          </div>
+          <p class="font-body text-sm sm:text-base text-on-background/80 leading-relaxed">
+            Desde la memoria de cálculo y diagrama unifilar hasta la canalización, cableado, transformadores y certificación UVIE. Un solo responsable integral para todo el proyecto.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-tech-ink/10 flex items-center justify-between font-mono text-xs font-bold">
+          <span class="text-secondary">SYS.STATUS:</span>
+          <span class="bg-surface-container px-2 py-0.5 border border-tech-ink rounded text-primary">ACTIVE 100%</span>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="brutal-card p-6 sm:p-8 flex flex-col justify-between relative">
+        <div>
+          <div class="flex items-center justify-between pb-4 mb-4 border-b-2 border-secondary/40">
+            <h3 class="font-headline font-black text-xl text-primary uppercase">Garantía y Seguridad</h3>
+            <span class="material-symbols-outlined text-secondary text-2xl">shield_lock</span>
+          </div>
+          <p class="font-body text-sm sm:text-base text-on-background/80 leading-relaxed">
+            Materiales y conductores de cobre electrolítico de primera calidad certificados bajo UL y ANCE. Protocolos de seguridad STPS y pruebas de resistencia de aislamiento.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-tech-ink/10 flex items-center justify-between font-mono text-xs font-bold">
+          <span class="text-secondary">SEC.LEVEL:</span>
+          <span class="bg-surface-container px-2 py-0.5 border border-tech-ink rounded text-primary">MAXIMUM</span>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="brutal-card p-6 sm:p-8 flex flex-col justify-between relative">
+        <div>
+          <div class="flex items-center justify-between pb-4 mb-4 border-b-2 border-secondary/40">
+            <h3 class="font-headline font-black text-xl text-primary uppercase">Transparencia</h3>
+            <span class="material-symbols-outlined text-secondary text-2xl">receipt_long</span>
+          </div>
+          <p class="font-body text-sm sm:text-base text-on-background/80 leading-relaxed">
+            Catálogo de conceptos pormenorizado, bitácora de obra digital, planos As-Built en AutoCAD y reportes de pruebas dieléctricas sin costos ocultos.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-tech-ink/10 flex items-center justify-between font-mono text-xs font-bold">
+          <span class="text-secondary">DATA.FLOW:</span>
+          <span class="bg-surface-container px-2 py-0.5 border border-tech-ink rounded text-primary">TRANSPARENT</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 4. ABOUT & STRATEGIC PARTNERS (Equipo & Alianzas)                 -->
+  <!-- ================================================================= -->
+  <section id="equipo" class="py-14 sm:py-20 px-4 sm:px-8 border-b-2 border-tech-ink bg-surface-subtle">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- Left Info -->
+      <div class="lg:col-span-6 flex flex-col gap-6">
+        <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-secondary uppercase">
+          <span>// INFRAESTRUCTURA CERTIFICADA</span>
+        </div>
+        <h2 class="font-headline font-black text-2xl sm:text-4xl text-primary uppercase tracking-tight leading-tight">
+          Ingeniería de Alto Rendimiento
+        </h2>
+        <p class="font-body text-base text-on-background/85 leading-relaxed">
+          Nuestro equipo reúne a ingenieros electricistas y técnicos certificados con más de 15 años de trayectoria en el sector electromecánico. No nos limitamos a tirar cables: diseñamos sistemas eléctricos confiables, resilientes y eficientes que protegen el patrimonio de tu empresa.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4 pt-2">
+          <div class="p-4 bg-white border-2 border-tech-ink rounded shadow-brutal-sm border-l-4 border-l-secondary">
+            <span class="block font-headline font-black text-3xl sm:text-4xl text-primary">15+</span>
+            <span class="font-mono text-xs sm:text-sm text-secondary font-bold uppercase">Años de Trayectoria</span>
+          </div>
+          <div class="p-4 bg-white border-2 border-tech-ink rounded shadow-brutal-sm border-l-4 border-l-secondary">
+            <span class="block font-headline font-black text-3xl sm:text-4xl text-primary">500+</span>
+            <span class="font-mono text-xs sm:text-sm text-secondary font-bold uppercase">Proyectos Energizados</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Partners Container -->
+      <div class="lg:col-span-6">
+        <div class="greek-frame-refined p-6 sm:p-8">
+          <div class="flex items-center justify-between pb-4 mb-6 border-b-2 border-secondary/40">
+            <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase tracking-wide">
+              Aliados Estratégicos & Marcas
+            </h3>
+            <span class="font-mono text-xs font-bold text-secondary uppercase">[ OEM GRADE ]</span>
+          </div>
+          <p class="font-body text-xs sm:text-sm text-on-background/70 mb-6">
+            Trabajamos exclusivamente con tecnología homologada de fabricantes líderes a nivel mundial:
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 sm:p-6 bg-white border-2 border-tech-ink rounded shadow-brutal-sm text-center flex flex-col items-center justify-center hover:bg-surface-container transition-colors">
+              <span class="font-mono font-black text-sm sm:text-base text-primary uppercase tracking-wider">SCHNEIDER ELECTRIC</span>
+              <span class="font-mono text-[10px] text-gray-500 mt-1">Celdas y Tableros</span>
+            </div>
+            <div class="p-4 sm:p-6 bg-white border-2 border-tech-ink rounded shadow-brutal-sm text-center flex flex-col items-center justify-center hover:bg-surface-container transition-colors">
+              <span class="font-mono font-black text-sm sm:text-base text-primary uppercase tracking-wider">SIEMENS</span>
+              <span class="font-mono text-[10px] text-gray-500 mt-1">Protecciones & Automatización</span>
+            </div>
+            <div class="p-4 sm:p-6 bg-white border-2 border-tech-ink rounded shadow-brutal-sm text-center flex flex-col items-center justify-center hover:bg-surface-container transition-colors">
+              <span class="font-mono font-black text-sm sm:text-base text-primary uppercase tracking-wider">CONDUMEX</span>
+              <span class="font-mono text-[10px] text-gray-500 mt-1">Conductores de Cobre 100%</span>
+            </div>
+            <div class="p-4 sm:p-6 bg-white border-2 border-tech-ink rounded shadow-brutal-sm text-center flex flex-col items-center justify-center hover:bg-surface-container transition-colors">
+              <span class="font-mono font-black text-sm sm:text-base text-primary uppercase tracking-wider">ABB</span>
+              <span class="font-mono text-[10px] text-gray-500 mt-1">Transformadores & Inversores</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 5. SERVICE CATALOG (8 Cards, Responsive Grid, No Hyphenation Bug) -->
+  <!-- ================================================================= -->
+  <section id="servicios" class="py-16 sm:py-20 px-4 sm:px-8 border-b-2 border-tech-ink bg-white">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-secondary uppercase bg-surface-subtle px-3 py-1 border border-tech-ink rounded shadow-brutal-sm mb-3">
+          <span>// PORTAFOLIO DE ESPECIALIDADES</span>
+        </div>
+        <h2 class="font-headline font-black text-3xl sm:text-4xl md:text-5xl text-primary uppercase tracking-tight">
+          Catálogo de Servicios
+        </h2>
+        <p class="font-body text-base sm:text-lg text-on-background/70 mt-3">
+          Soluciones de ingeniería electromecánica integral con cálculo, provisión e instalación garantizada.
+        </p>
+      </div>
+
+      <!-- 8-Card Grid: 1 col on mobile, 2 cols on tablet, 4 cols on desktop -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        
+        <!-- Service 1: Concentraciones -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-concentraciones.jpg" alt="Concentraciones de medidores eléctricos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-01</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Concentraciones
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Diseño, montaje y libranzas de concentraciones de medidores para complejos residenciales, edificios y centros comerciales.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>NORMA CFE</span>
+              <span class="material-symbols-outlined text-sm">bolt</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 2: Infraestructura -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-infraestructura.jpg" alt="Infraestructura y bandejas portacables" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-02</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Infraestructura
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Canalizaciones pesadas, charolas portacables tipo malla/escalerilla y alimentadores de alta capacidad para naves industriales y data centers.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>ALTA CAPACIDAD</span>
+              <span class="material-symbols-outlined text-sm">hub</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 3: Electromovilidad -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-electromovilidad.jpg" alt="Cargadores de autos eléctricos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-03</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Electromovilidad
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Estaciones de carga para vehículos eléctricos (EV) Nivel 2 y Nivel 3 DC Fast Charge con gestión inteligente de carga y protocolo OCPP.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>EV CHARGERS</span>
+              <span class="material-symbols-outlined text-sm">ev_station</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 4: Renovables -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-renovables.jpg" alt="Sistemas solares fotovoltaicos industriales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-04</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Renovables
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Sistemas fotovoltaicos interconectados a la red (SFVI), bancos de condensadores para factor de potencia y optimización de tarifas CFE GDMTH.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>SOLAR SOLAR</span>
+              <span class="material-symbols-outlined text-sm">solar_power</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 5: Iluminación -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-iluminacion.jpg" alt="Iluminación industrial LED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-05</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Iluminación
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Estudios fotométricos en Dialux, sustitución de luminarias a tecnología LED de alta bahía (High-Bay) y sistemas de control DALI / 0-10V.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>NOM-025-STPS</span>
+              <span class="material-symbols-outlined text-sm">light_mode</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 6: Mantenimiento -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-mantenimiento.jpg" alt="Termografía y mantenimiento de subestaciones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-06</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Mantenimiento
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Pólizas 24/7 preventivas y correctivas: termografía infrarroja, análisis físico-químico de aceite en transformadores y torqueo de tableros.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>TERMOGRAFÍA</span>
+              <span class="material-symbols-outlined text-sm">engineering</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 7: Salud (Áreas Médicas) -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-salud.jpg" alt="Instalaciones eléctricas hospitalarias" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-07</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Sector Salud
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Instalaciones eléctricas hospitalarias críticas bajo NOM-001-SEDE Art. 517: tableros de aislamiento, monitores de fuga a tierra y ramas de emergencia.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>ART. 517 SEDE</span>
+              <span class="material-symbols-outlined text-sm">local_hospital</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 8: Gestoría & UVIE -->
+        <article class="brutal-card flex flex-col overflow-hidden group">
+          <div class="h-48 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink relative">
+            <img src="img/serv-gestoria.jpg" alt="Gestoría UVIE y trámites CFE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded border border-white/50">MOD-08</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <h3 class="font-headline font-black text-lg sm:text-xl text-primary uppercase leading-snug mb-2 no-hyphens">
+                Gestoría & UVIE
+              </h3>
+              <p class="font-body text-xs sm:text-sm text-on-background/80 leading-relaxed">
+                Dictaminación ante Unidades de Verificación de Instalaciones Eléctricas (UVIE), trámites de interconexión con CFE y elaboración de planos oficiales.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between font-mono text-[11px] text-secondary font-bold">
+              <span>DICTAMEN UVIE</span>
+              <span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 6. COMPLIANCE & CERTIFICATIONS BADGES                             -->
+  <!-- ================================================================= -->
+  <section id="cumplimiento" class="py-12 px-4 sm:px-8 border-b-2 border-tech-ink bg-surface-subtle">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="font-headline font-black text-xl sm:text-2xl text-primary uppercase tracking-wider mb-6">
+        Certificaciones, Normativas y Estándares
+      </h2>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+        <span class="font-mono text-xs sm:text-sm font-bold text-primary bg-white px-5 py-2.5 border-2 border-tech-ink rounded shadow-brutal-sm hover:-translate-y-1 transition-transform">
+          NOM-001-SEDE-2012 / 2018
+        </span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-primary bg-white px-5 py-2.5 border-2 border-tech-ink rounded shadow-brutal-sm hover:-translate-y-1 transition-transform">
+          CÓDIGO DE RED 2.0 (CRE)
+        </span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-primary bg-white px-5 py-2.5 border-2 border-tech-ink rounded shadow-brutal-sm hover:-translate-y-1 transition-transform">
+          RED CONOCER / EC0118
+        </span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-primary bg-white px-5 py-2.5 border-2 border-tech-ink rounded shadow-brutal-sm hover:-translate-y-1 transition-transform">
+          STPS DC-3 SEGURIDAD ELÉCTRICA
+        </span>
+        <span class="font-mono text-xs sm:text-sm font-bold text-primary bg-white px-5 py-2.5 border-2 border-tech-ink rounded shadow-brutal-sm hover:-translate-y-1 transition-transform">
+          EV CERTIFIED LEVEL 2 & 3
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 7. CASE STUDIES PORTFOLIO (3 Detailed Case Studies)               -->
+  <!-- ================================================================= -->
+  <section id="portafolio" class="py-16 sm:py-20 px-4 sm:px-8 border-b-2 border-tech-ink bg-white">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-secondary uppercase bg-surface-subtle px-3 py-1 border border-tech-ink rounded shadow-brutal-sm mb-3">
+          <span>// EVIDENCIA EN CAMPO</span>
+        </div>
+        <h2 class="font-headline font-black text-3xl sm:text-4xl md:text-5xl text-primary uppercase tracking-tight">
+          Casos de Estudio
+        </h2>
+        <p class="font-body text-base sm:text-lg text-on-background/70 mt-3">
+          Proyectos emblemáticos ejecutados en tiempo, forma y con estricto apego normativo.
+        </p>
+      </div>
+
+      <!-- 3 Case Study Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Case 1: Sector Salud -->
+        <article class="brutal-card flex flex-col overflow-hidden">
+          <div class="p-4 bg-surface-container border-b-2 border-tech-ink flex items-center justify-between">
+            <h3 class="font-headline font-black text-lg text-primary uppercase">Sector Salud</h3>
+            <span class="font-mono text-xs bg-white text-secondary px-2 py-0.5 rounded border border-tech-ink font-bold">CASO 01</span>
+          </div>
+          <div class="h-60 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink">
+            <img src="img/case-salud.jpg" alt="Caso de estudio Hospital de Tercer Nivel" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <p class="font-body text-sm text-on-background/85 leading-relaxed mb-6">
+              Modernización y redundancia del sistema eléctrico crítico para hospital de alta especialidad, asegurando respaldo ininterrumpido en quirófanos y áreas de terapia intensiva.
+            </p>
+            
+            <!-- Technical Spec Box -->
+            <div class="bg-surface-subtle p-4 border-2 border-tech-ink rounded shadow-brutal-sm font-mono text-xs">
+              <span class="text-secondary font-black block mb-2 pb-1 border-b border-secondary/30 uppercase">// FICHA TÉCNICA</span>
+              <div class="space-y-1.5 font-bold text-primary">
+                <div>&gt; CAPACIDAD: <span class="text-on-background">2500 kVA</span></div>
+                <div>&gt; NORMATIVA: <span class="text-on-background">NOM-001-SEDE ART. 517</span></div>
+                <div>&gt; ESTADO: <span class="text-green-700">100% OPERACIONAL</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 2: Energías Renovables -->
+        <article class="brutal-card flex flex-col overflow-hidden">
+          <div class="p-4 bg-surface-container border-b-2 border-tech-ink flex items-center justify-between">
+            <h3 class="font-headline font-black text-lg text-primary uppercase">Energías Renovables</h3>
+            <span class="font-mono text-xs bg-white text-secondary px-2 py-0.5 rounded border border-tech-ink font-bold">CASO 02</span>
+          </div>
+          <div class="h-60 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink">
+            <img src="img/case-renovables.jpg" alt="Caso de estudio Parque Fotovoltaico Industrial" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <p class="font-body text-sm text-on-background/85 leading-relaxed mb-6">
+              Diseño y conexión de parque fotovoltaico industrial sobre cubierta manufacturera con 15 inversores string, optimizando la demanda máxima y el factor de potencia.
+            </p>
+            
+            <!-- Technical Spec Box -->
+            <div class="bg-surface-subtle p-4 border-2 border-tech-ink rounded shadow-brutal-sm font-mono text-xs">
+              <span class="text-secondary font-black block mb-2 pb-1 border-b border-secondary/30 uppercase">// FICHA TÉCNICA</span>
+              <div class="space-y-1.5 font-bold text-primary">
+                <div>&gt; POTENCIA: <span class="text-on-background">1.5 MWp (15x 100kW)</span></div>
+                <div>&gt; EFICIENCIA: <span class="text-on-background">98.4% EN INVERSOR</span></div>
+                <div>&gt; ESTADO: <span class="text-green-700">100% INTERCONECTADO</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 3: Infraestructura Logística -->
+        <article class="brutal-card flex flex-col overflow-hidden">
+          <div class="p-4 bg-surface-container border-b-2 border-tech-ink flex items-center justify-between">
+            <h3 class="font-headline font-black text-lg text-primary uppercase">Infraestructura</h3>
+            <span class="font-mono text-xs bg-white text-secondary px-2 py-0.5 rounded border border-tech-ink font-bold">CASO 03</span>
+          </div>
+          <div class="h-60 w-full border-b-2 border-tech-ink overflow-hidden bg-tech-ink">
+            <img src="img/case-infraestructura.jpg" alt="Caso de estudio Subestación Centro Logístico" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow justify-between">
+            <p class="font-body text-sm text-on-background/85 leading-relaxed mb-6">
+              Subestación principal compacta en media tensión para nuevo centro de distribución de e-commerce, diseñada para soportar picos intensivos de demanda con libranza CFE.
+            </p>
+            
+            <!-- Technical Spec Box -->
+            <div class="bg-surface-subtle p-4 border-2 border-tech-ink rounded shadow-brutal-sm font-mono text-xs">
+              <span class="text-secondary font-black block mb-2 pb-1 border-b border-secondary/30 uppercase">// FICHA TÉCNICA</span>
+              <div class="space-y-1.5 font-bold text-primary">
+                <div>&gt; TENSIÓN: <span class="text-on-background">23 kV / 440 V</span></div>
+                <div>&gt; TECNOLOGÍA: <span class="text-on-background">CELDA COMPACTA SF6</span></div>
+                <div>&gt; ESTADO: <span class="text-green-700">100% OPERACIONAL</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 8. INTERACTIVE PROJECT QUOTE FORM ("Iniciar Proyecto")           -->
+  <!-- ================================================================= -->
+  <section id="cotizar" class="py-16 sm:py-20 px-4 sm:px-8 border-b-2 border-tech-ink bg-surface-subtle">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="greek-frame-refined p-6 sm:p-10 md:p-12">
+        <div class="pb-6 mb-8 border-b-2 border-secondary/40">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-mono text-xs font-bold text-secondary uppercase">// TRANSMISIÓN DE REQUERIMIENTOS</span>
+            <span class="font-mono text-[10px] bg-primary text-white px-2 py-0.5 rounded font-bold">SECURE CHANNEL</span>
+          </div>
+          <h2 class="font-headline font-black text-2xl sm:text-4xl text-primary uppercase tracking-tight">
+            Iniciar Proyecto Eléctrico
+          </h2>
+          <p class="font-body text-sm text-on-background/70 mt-2">
+            Ingresa los parámetros de tu instalación para asignarte un ingeniero de proyecto y generar tu propuesta técnica sin costo.
+          </p>
+        </div>
+
+        <form id="quoteForm" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="clientName" class="block font-mono text-xs font-bold text-primary uppercase mb-2">
+                IDENTIFICADOR // NOMBRE
+              </label>
+              <input type="text" id="clientName" required placeholder="Ing. Carlos Mendoza" class="w-full bg-white border-2 border-tech-ink p-3 sm:p-3.5 rounded shadow-brutal-sm font-body text-sm text-tech-ink focus:outline-none focus:border-secondary focus:ring-0 transition-colors">
+            </div>
+            <div>
+              <label for="clientEmail" class="block font-mono text-xs font-bold text-primary uppercase mb-2">
+                ENLACE // CORREO ELECTRÓNICO
+              </label>
+              <input type="email" id="clientEmail" required placeholder="carlos.mendoza@empresa.com" class="w-full bg-white border-2 border-tech-ink p-3 sm:p-3.5 rounded shadow-brutal-sm font-body text-sm text-tech-ink focus:outline-none focus:border-secondary focus:ring-0 transition-colors">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="clientPhone" class="block font-mono text-xs font-bold text-primary uppercase mb-2">
+                CANAL DE VOZ // TELÉFONO O WHATSAPP
+              </label>
+              <input type="tel" id="clientPhone" required placeholder="55 1234 5678" class="w-full bg-white border-2 border-tech-ink p-3 sm:p-3.5 rounded shadow-brutal-sm font-body text-sm text-tech-ink focus:outline-none focus:border-secondary focus:ring-0 transition-colors">
+            </div>
+            <div>
+              <label for="systemType" class="block font-mono text-xs font-bold text-primary uppercase mb-2">
+                TIPO DE SISTEMA REQUERIDO
+              </label>
+              <select id="systemType" class="w-full bg-white border-2 border-tech-ink p-3 sm:p-3.5 rounded shadow-brutal-sm font-mono text-xs sm:text-sm font-bold text-tech-ink focus:outline-none focus:border-secondary focus:ring-0 transition-colors">
+                <option value="Infraestructura Industrial">INFRAESTRUCTURA INDUSTRIAL / SUBESTACIÓN</option>
+                <option value="Electromovilidad">ELECTROMOVILIDAD (CARGADORES EV NIVEL 2/3)</option>
+                <option value="Concentración de Medidores">CONCENTRACIÓN DE MEDIDORES (CFE)</option>
+                <option value="Energías Renovables">SISTEMA FOTOVOLTAICO / ENERGÍAS RENOVABLES</option>
+                <option value="Sector Salud">INSTALACIÓN CRÍTICA SALUD (NOM-001 ART 517)</option>
+                <option value="Mantenimiento">MANTENIMIENTO PREVENTIVO 24/7</option>
+                <option value="Dictaminación UVIE">DICTAMINACIÓN UVIE / GESTORÍA CFE</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="projectDetails" class="block font-mono text-xs font-bold text-primary uppercase mb-2">
+              ALCANCE / ESPECIFICACIONES TÉCNICAS (OPCIONAL)
+            </label>
+            <textarea id="projectDetails" rows="3" placeholder="Describe brevemente la potencia estimada, ubicación o fecha programada del proyecto..." class="w-full bg-white border-2 border-tech-ink p-3 sm:p-3.5 rounded shadow-brutal-sm font-body text-sm text-tech-ink focus:outline-none focus:border-secondary focus:ring-0 transition-colors"></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="brutal-btn-primary w-full py-4 text-sm sm:text-base tracking-wider uppercase">
+            <span>[ TRANSMITIR REQUERIMIENTOS ]</span>
+            <span class="material-symbols-outlined text-yellow-300">send</span>
+          </button>
+        </form>
+
+        <!-- Simulated Interactive Transmission Output -->
+        <div id="transmissionResult" class="hidden mt-6 p-4 sm:p-6 bg-tech-ink text-green-400 font-mono text-xs rounded border-2 border-green-500 shadow-brutal">
+          <div class="flex items-center justify-between pb-2 mb-3 border-b border-green-800">
+            <span class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-green-400 live-circuit-indicator"></span>
+              <strong class="text-white">STATUS: TELEMETRÍA ENVIADA EXITOSAMENTE</strong>
+            </span>
+            <span id="ticketCode" class="text-yellow-300 font-bold">FOLIO: TL-2026-9481</span>
+          </div>
+          <p id="transmissionMessage" class="text-gray-300 mb-2 leading-relaxed">
+            Los requerimientos han sido enrutados al departamento de ingeniería eléctrica. Un especialista se comunicará vía correo o WhatsApp en menos de 2 horas hábiles.
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2 text-[11px] text-gray-400 border-t border-green-900/60">
+            <span>PROTOCOLO: SECURE-TLS</span>
+            <span>UVIE QUEUE: ASIGNADA</span>
+            <span>DISPATCH: CDMX / METRO</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 9. FOOTER (Brutalist, Semantic, Clean 4-Column Layout)            -->
+  <!-- ================================================================= -->
+  <footer class="bg-white border-t-2 border-tech-ink py-12 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Brand Summary -->
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <img src="img/logo-tales.svg" alt="Tales Eléctrica" class="w-10 h-10 border-2 border-tech-ink rounded shadow-brutal-sm">
+          <span class="font-headline font-black text-xl text-primary tracking-tight uppercase">
+            Tales Eléctrica
+          </span>
+        </div>
+        <p class="font-body text-sm text-on-background/70 max-w-md leading-relaxed">
+          Firma mexicana de ingeniería eléctrica especializada en infraestructura de potencia, instalaciones hospitalarias, centros de carga EV y dictámenes oficiales UVIE.
+        </p>
+        <p class="font-mono text-xs text-secondary font-bold uppercase tracking-wider">
+          © 2026 TALES ELÉCTRICA | INGENIERÍA RESIDENCIAL, INDUSTRIAL Y ALTA TENSIÓN
+        </p>
+      </div>
+
+      <!-- Operational Info -->
+      <div class="flex flex-col gap-3">
+        <h4 class="font-mono text-xs font-bold text-secondary uppercase pb-2 border-b-2 border-secondary/40">
+          // OPERACIONES & COBERTURA
+        </h4>
+        <ul class="font-mono text-xs text-on-background/80 space-y-2">
+          <li class="flex items-start gap-1.5">
+            <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+            <span>CDMX, Estado de México e Hidalgo</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="material-symbols-outlined text-sm text-primary">schedule</span>
+            <span>Lunes a Viernes: 08:00 — 18:00</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="material-symbols-outlined text-sm text-primary">engineering</span>
+            <span>Atención de Emergencias Industriales 24/7</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Direct Contact & Legal -->
+      <div class="flex flex-col gap-3">
+        <h4 class="font-mono text-xs font-bold text-secondary uppercase pb-2 border-b-2 border-secondary/40">
+          // ENLACES DIRECTOS
+        </h4>
+        <ul class="font-mono text-xs space-y-2">
+          <li>
+            <a href="https://wa.me/525512345678" target="_blank" rel="noopener" class="text-primary hover:text-secondary font-bold flex items-center gap-1.5 transition-colors">
+              <span class="material-symbols-outlined text-sm text-green-700">chat</span>
+              <span>WhatsApp de Ingeniería</span>
+            </a>
+          </li>
+          <li>
+            <a href="#cumplimiento" class="text-on-background/80 hover:text-primary transition-colors flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">verified_user</span>
+              <span>Cumplimiento NOM-001-SEDE</span>
+            </a>
+          </li>
+          <li>
+            <a href="#servicios" class="text-on-background/80 hover:text-primary transition-colors flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">electrical_services</span>
+              <span>Catálogo de Servicios</span>
+            </a>
+          </li>
+          <li>
+            <a href="#cotizar" class="text-on-background/80 hover:text-primary transition-colors flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">edit_note</span>
+              <span>Solicitar Dictamen UVIE</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================================= -->
+  <!-- JAVASCRIPT: Mobile Navigation Toggle & Interactive Form Handling -->
+  <!-- ================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Drawer Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+      const menuIconOpen = document.getElementById('menuIconOpen');
+      const menuIconClose = document.getElementById('menuIconClose');
+
+      if (mobileMenuBtn && mobileMenuDrawer) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+          mobileMenuDrawer.classList.toggle('hidden');
+          menuIconOpen.classList.toggle('hidden');
+          menuIconClose.classList.toggle('hidden');
+        });
+
+        // Close drawer when clicking any link inside it
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuDrawer.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            menuIconOpen.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
+          });
+        });
+      }
+
+      // Interactive Form Submission
+      const quoteForm = document.getElementById('quoteForm');
+      const transmissionResult = document.getElementById('transmissionResult');
+      const ticketCode = document.getElementById('ticketCode');
+      const transmissionMessage = document.getElementById('transmissionMessage');
+      const submitBtn = document.getElementById('submitBtn');
+
+      if (quoteForm) {
+        quoteForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('clientName').value.trim();
+          const email = document.getElementById('clientEmail').value.trim();
+          const phone = document.getElementById('clientPhone').value.trim();
+          const systemType = document.getElementById('systemType').value;
+
+          // Simulated calculation / transmission effect
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<span>[ PROCESANDO TELEMETRÍA... ]</span><span class="material-symbols-outlined animate-spin text-yellow-300">sync</span>`;
+
+          setTimeout(() => {
+            const randomCode = 'TL-' + (new Date().getFullYear()) + '-' + Math.floor(1000 + Math.random() * 9000);
+            ticketCode.textContent = `FOLIO ASIGNADO: ${randomCode}`;
+            transmissionMessage.textContent = `Estimado(a) ${name}, hemos recibido tu requerimiento de [${systemType}]. El equipo técnico asignado para CDMX/Edomex/Hgo te contactará a ${email} o al ${phone} con la memoria técnica preliminar.`;
+            
+            transmissionResult.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>[ TRANSMISIÓN COMPLETADA ]</span><span class="material-symbols-outlined text-green-400">check_circle</span>`;
+            
+            // Smooth scroll to result
+            transmissionResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 600);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

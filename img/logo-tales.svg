@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Brutalist Technical Background Container -->
+  <rect x="4" y="4" width="112" height="112" rx="4" fill="#2F0052" stroke="#111116" stroke-width="4"/>
+  <!-- Greek Key Meander / Orthogonal Circuit Traces -->
+  <path d="M16 16 H104 V104 H16 Z" stroke="#841CD8" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+  <path d="M26 26 H94 V44 H50 V76 H94 V94 H26 Z" stroke="#F1DAFF" stroke-width="3" stroke-linejoin="round" fill="none"/>
+  <!-- Center Power Node / High Voltage Bolt -->
+  <polygon points="64,30 46,62 58,62 52,90 74,54 62,54" fill="#DFB7FF" stroke="#111116" stroke-width="1.5"/>
+  <!-- Circuit Nodes (PCB contact pads) -->
+  <circle cx="26" cy="26" r="4" fill="#841CD8" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="94" cy="26" r="4" fill="#841CD8" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="26" cy="94" r="4" fill="#841CD8" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="94" cy="94" r="4" fill="#841CD8" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="50" cy="44" r="3" fill="#FFFFFF"/>
+  <circle cx="50" cy="76" r="3" fill="#FFFFFF"/>
+</svg>
